@@ -1,0 +1,114 @@
+<div class="card text-body bg-light mb-3 text-center  " >
+
+
+ <div class="p-4">
+    <div class="form-row">
+
+
+    <div class="form-group card-body col-md-6">
+    <label >Nombre</label>
+    <input
+      type="text"
+      class="form-control"
+
+      [(ngModel)]="selectClient.nombre"
+      placeholder="Nombre"
+      >
+    </div>
+  <div class="form-group card-body col-md-6">
+    <label >Apellido</label>
+    <input
+      type="text"
+      class="form-control"
+
+      [(ngModel)]="selectClient.apellido"
+      placeholder="Apellido"
+      >
+   </div>
+
+    </div>
+
+
+  <div class="form-row">
+
+    <div class="form-group card-body col-md-6">
+        <label >Dni</label>
+        <input
+          type="number"
+          class="form-control"
+
+          [(ngModel)]="selectClient.dni"
+          placeholder="Nº de documento"
+          >
+     </div>
+
+     <div class="form-group card-body col-md-6">
+        <label >Email</label>
+        <input
+          type="email"
+          class="form-control"
+
+          [(ngModel)]="selectClient.email"
+          placeholder="Email"
+          >
+     </div>
+
+
+   </div>
+   <div class="form-row">
+
+      <div class="form-group card-body col-md-6">
+          <label >Telefono celular</label>
+          <input
+            type="number"
+            class="form-control"
+
+            [(ngModel)]="selectClient.celular"
+            placeholder="Telefono celular"
+            >
+       </div>
+
+       <div class="form-group card-body col-md-6">
+          <label >Telefono fijo</label>
+          <input
+            type="number"
+            class="form-control"
+
+            [(ngModel)]="selectClient.fijo"
+            placeholder="Telefono fijo"
+            >
+       </div>
+
+
+     </div>
+
+     <div class="form-row">
+
+        <div class="form-group card-body col-md-6">
+            <label >Fecha de Nacimiento</label>
+            <input
+              type="number"
+              class="form-control"
+
+              [(ngModel)]="selectClient.fecha"
+              placeholder="Fecha de Nacimiento"
+              >
+         </div>
+   <!--
+         <div class="form-group card-body col-md-6">
+            <label for="sucursal">Sucursal</label>
+           <select class="form-control" [(ngModel)]="sucursal" >
+             <option selected>Sucursal...</option>
+           </select>
+         </div>
+        -->
+
+       </div>
+
+
+</div>
+
+<button (click)="addcliente()"  class="btn btn-primary btn-lg btn-block">Guardar Cliente
+</button>
+
+</div>

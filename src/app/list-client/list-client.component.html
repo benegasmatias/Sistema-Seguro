@@ -1,0 +1,12 @@
+<ul class="list-group">
+  <li
+  *ngFor="let cli of clienteArray"
+   class="list-group-item list-group-item-action"
+   (click)= "modificar(cli)"
+   [class.active]= "cli == selecCliente"
+ >
+   <!-- esta estiqueta span me deja poder mostrar mas informacion -->
+   <span class="badge badge-primary">{{cli.id}}</span>
+     {{cli.nombre}} - {{cli.apellido}} - {{cli.dni}}
+  </li>
+</ul>

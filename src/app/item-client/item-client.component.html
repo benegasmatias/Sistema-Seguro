@@ -1,0 +1,115 @@
+<form class="card text-white bg-dark mb-3" #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
+
+   <h5 class="card-header text-center">Vehiculo</h5>
+
+  <div class="form-row text-center">
+
+
+      <div class="form-group card-body col-md-4">
+          <label for="vehiculo">Vehiculo</label>
+          <select class="form-control" name="vehiculo" #name="ngModel" [(ngModel)]="vehiculo" >
+            <option selected>Vehiculo...</option>
+          </select>
+        </div>
+
+    <div class="form-group card-body col-md-4">
+          <label for="tipovehiculo">Tipo Vehiculo</label>
+          <select class="form-control" name="tipovehiculo" #name="ngModel" [(ngModel)]="tipovehiculo" >
+           <option selected>Tipo Vehiculo...</option>
+          </select>
+        </div>
+    <div class="form-group card-body col-md-4">
+          <label for="carroceria">Carrocería</label>
+          <select class="form-control" name="carroceria" #name="ngModel" [(ngModel)]="carroceria" >
+            <option selected>Carrocería...</option>
+          </select>
+          </div>
+  </div>
+  <div class="form-row text-center">
+
+      <div class="form-group card-body col-md-4 ">
+          <label for="patente">Patente</label>
+          <input
+            type="number"
+            class="form-control"
+            name="patente"
+            #name="ngModel"
+            [(ngModel)]="patente"
+            placeholder="Nº de patente"
+            >
+       </div>
+
+       <div class="form-group card-body col-md-4">
+          <label for="motor">Motor</label>
+          <input
+            type="number"
+            class="form-control"
+            name="motor"
+            #name="ngModel"
+            [(ngModel)]="motor"
+            placeholder="Nº de motor"
+            >
+       </div>
+
+
+      <div class="form-group card-body col-md-4">
+          <label for="chasis">Chasis</label>
+          <input
+            type="number"
+            class="form-control"
+            name="chasis"
+            #name="ngModel"
+            [(ngModel)]="chasis"
+            placeholder="Nº de Chasis"
+            >
+       </div>
+     </div>
+
+     <div class="form-row text-center">
+
+        <div class="form-group card-body col-md-4 ">
+            <label for="anio">Año</label>
+            <input
+              type="number"
+              class="form-control"
+              name="anio"
+              #name="ngModel"
+              [(ngModel)]="anio"
+              placeholder="Año"
+              >
+         </div>
+
+         <div class="form-group card-body col-md-4">
+            <label for="color">Color</label>
+            <input
+              type="color"
+              class="form-control"
+              name="color"
+              #name="ngModel"
+              [(ngModel)]="color"
+              placeholder="Color"
+              >
+         </div>
+
+
+         <div class="form-group card-body col-md-4">
+            <label for="origen">Origen</label>
+            <select class="form-control" name="origen" #name="ngModel" [(ngModel)]="origen" >
+              <option selected>Importado...</option>
+            </select>
+            </div>
+
+       </div>
+
+
+
+
+
+
+   <div class="form-group">
+      <button class="btn btn-primary btn-lg btn-block" type="submit" >
+          <i class="fas fa-plus-circle"></i> Agregar item
+      </button>
+   </div>
+
+  </form>
