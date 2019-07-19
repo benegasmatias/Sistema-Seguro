@@ -1,0 +1,77 @@
+<div class="card text-body bg-light mb-3 text-center  " >
+
+
+    <div class="p-4">
+       <div class="form-row">
+
+
+       <div class="form-group card-body col-md-6">
+       <label >Patente</label>
+       <input
+         type="text"
+         class=" form-control"
+         [(ngModel)]="selectitem.patente"
+         placeholder="Nº de patente"
+         >
+       </div>
+     <div class="form-group card-body col-md-6">
+       <label >Motor</label>
+       <input
+         type="text"
+         class="form-control"
+
+         [(ngModel)]="selectitem.motor"
+         placeholder="Nº de motor"
+         >
+      </div>
+
+       </div>
+
+
+     <div class="form-row">
+
+       <div class="form-group card-body col-md-6">
+           <label >Chasis</label>
+           <input
+             type="text"
+             class="form-control"
+
+             [(ngModel)]="selectitem.chasis"
+             placeholder="Nº de Chasis"
+             >
+        </div>
+
+        <div class="form-group card-body col-md-6">
+           <label >Origen</label>
+           <input
+             type="text"
+             class="form-control"
+
+             [(ngModel)]="selectitem.origen"
+             placeholder="Origen"
+             >
+        </div>
+
+
+      </div>
+      <div class="form-row">
+
+
+      <!--
+            <div class="form-group card-body col-md-6">
+               <label for="sucursal">Sucursal</label>
+              <select class="form-control" [(ngModel)]="sucursal" >
+                <option selected>Sucursal...</option>
+              </select>
+            </div>
+           -->
+
+          </div>
+
+
+   </div>
+
+   <button (click)="addcliente()"  class="btn btn-primary btn-lg btn-block">Guardar Cliente
+   </button>
+
+   </div>

@@ -1,7 +1,8 @@
-import { Injectable, Input } from '@angular/core';
+import { Injectable } from '@angular/core';
 import {Cliente} from '../models/cliente';
+import{ItemserviceService} from './itemservice.service';
 
-import {ClientFormComponent} from '../client-form/client-form.component';
+
 
 
 @Injectable({
@@ -10,14 +11,16 @@ import {ClientFormComponent} from '../client-form/client-form.component';
 export class ClientserviceService {
 
    clien:Cliente[]= [
-    {id:1 , nombre:"juan", apellido:"benegas",dni:37649825,email:"benegas.matias@gmail.com",celular:2644558877,fijo:4265577,fechan:"26/03/1990",sucursal:null,items:null},
-    {id:2  ,nombre:"juan", apellido:"benegas",dni:37649825,email:"benegas.matias@gmail.com",celular:2644558877,fijo:4265577,fechan:"26/03/1990",sucursal:null,items:null}
+    {id:1 , nombre:"juan", apellido:"benegas",dni:37649825,email:"benegas.matias@gmail.com",celular:2644558877,fijo:4265577,fechan:"26/03/1990",items:null},
+    {id:2  ,nombre:"juan", apellido:"benegas",dni:37649825,email:"benegas.matias@gmail.com",celular:2644558877,fijo:4265577,fechan:"26/03/1990",items:null}
   ];
 
-  selectCliente: Cliente = new Cliente();
-  formclient: ClientFormComponent;
+  selectCliente: Cliente;
 
-  constructor() { }
+
+  constructor(
+    itemServicio : ItemserviceService
+    ) { }
 
 
 
@@ -27,13 +30,17 @@ export class ClientserviceService {
 
   abrirparaModificar(cli: Cliente) {
     this.selectCliente = cli;
-    this.formclient.abrirParamodificar(this.selectCliente);
+
   }
 
   getclient(selectclient: Cliente) {
     this.selectCliente = selectclient;
     selectclient.id = this.clien.length + 1;
     this.clien.push(selectclient);
+  }
+
+  addItem(cli:Cliente){
+
 
 
 

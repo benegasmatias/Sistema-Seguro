@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import {Cliente} from '../models/cliente';
+import {Cliente} from '../../models/cliente';
 
-import {ClientserviceService} from '../service/clientservice.service';
+import {ClientserviceService} from '../../service/clientservice.service';
 
 
 @Component({
@@ -22,10 +22,15 @@ export class ListClientComponent implements OnInit {
   ) { }
 
 
-   modificar(cli: Cliente){
+   modificar(cli: Cliente) {
     this.selecCliente = cli;
     this.servicio.abrirparaModificar(this.selecCliente);
 
+  }
+
+  additems(cli:Cliente)
+  {
+    this.servicio.addItem(cli);
   }
 
 

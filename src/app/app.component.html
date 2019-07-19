@@ -1,22 +1,28 @@
-<!--The content below is only a placeholder and can be replaced.-->
 
 <app-navigation></app-navigation>
 
 <div class="container-fluid ">
 
-    <div class="row">
+    <div class="row ">
 
-      <div class="col-md-4 mt-4">
-          <app-list-client></app-list-client>
+      <div class="col-md-2  ">
+          <div class="btn-group mt-4 ">
 
+              <button class=" btn btn-primary" routerLink="/listClientes">Clientes</button>
+              <button class="btn dropdown-toggle btn-primary " data-toggle="dropdown">
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu text-light text-center">
+                <li >
+                   <a routerLink="/formCliente">Nuevo Cliente</a>
+                </li>
+              </ul>
+            </div>
 
       </div>
-      <div class="col-md-8 mt-4">
-          <app-client-form></app-client-form>
-          <app-item-client></app-item-client>
+      <div class="col-md-10 mt-4">
+          <router-outlet></router-outlet>
 
       </div>
     </div>
   </div>
-
-<router-outlet></router-outlet>

@@ -1,4 +1,4 @@
-import { EmailValidator } from '@angular/forms';
+
 import { Sucursal } from './sucursal';
 import { Items } from './items';
 
@@ -11,7 +11,7 @@ export class Cliente {
   celular:number;
   fijo:number;
   fechan:string;
-  sucursal:Sucursal;
-  items: Items;
+  //sucursal:Sucursal;
+  items: Items[];
 
 }

@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import {Cliente} from '../models/cliente';
+import {Cliente} from '../../models/cliente';
 
-import {ClientserviceService} from '../service/clientservice.service';
+import {ClientserviceService} from '../../service/clientservice.service';
 
 
 @Component({
@@ -14,10 +14,7 @@ export class ClientFormComponent implements OnInit {
 
   selectClient: Cliente = new Cliente();
 
-
-
-
-
+  @Input() selectcliente: Cliente;
 
   constructor(
     private servicio: ClientserviceService
@@ -25,10 +22,13 @@ export class ClientFormComponent implements OnInit {
 
   ngOnInit() {
 
+
+
   }
 
+
    abrirParamodificar(cli: Cliente) {
-    this.selectClient = cli;
+    this.selectClient = this.servicio.selectCliente;
 
   }
 
