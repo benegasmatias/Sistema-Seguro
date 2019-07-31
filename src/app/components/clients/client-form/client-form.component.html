@@ -20,14 +20,14 @@
                             <label class="input-group-text" for="inputDniClient">Dni</label>
                           </div>
                           <input type="number" id="inputDniClient" class="form-control">
-              
+
                         </div>
                         <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                   <label class="input-group-text" for="inputCuitClient">CUIT</label>
                                 </div>
                                 <input type="number" id="inputCuitClient" class="form-control">
-                    
+
                               </div>
                         <div class="input-group mb-3">
                           <div class="input-group-prepend">
@@ -40,7 +40,11 @@
                                   <label class="input-group-text" for="inputSexClient">Sexo</label>
                                 </div>
                                 <select class="custom-select" id="inputSexClient">
-                                  <option></option>
+                                  <option  *ngFor='let s of sexs'>
+
+                                    {{ s.type_sex}}
+
+                                </option>
 
                                 </select>
                         </div>
@@ -49,7 +53,11 @@
                                   <label class="input-group-text" for="inputTypePersonClient">Tipo de persona</label>
                                 </div>
                                 <select class="custom-select" id="inputTypePersonClient">
-                                  <option></option>
+                                  <option  *ngFor='let t of typepeople'>
+
+                                    {{ t.name_type_persons}}
+
+                                </option>
 
                                 </select>
                         </div>
@@ -58,12 +66,16 @@
                                   <label class="input-group-text" for="inputTypeConsumerClient">Tipo de consumidor</label>
                                 </div>
                                 <select class="custom-select" id="inputTypeConsumerClient">
-                                  <option></option>
+                                  <option  *ngFor='let t of typeconsumers'>
+
+                                    {{ t.name_type_consumer}}
+
+                                </option>
 
                                 </select>
                         </div>
-                        
-                        
+
+
 
                         <div class="input-group mb-3">
                           <div class="input-group-prepend">
@@ -94,25 +106,29 @@
                                   <label class="input-group-text" for="inputLocationClient">Localidad</label>
                                 </div>
                                 <select class="custom-select" id="inputLocationClient">
-                                  <option></option>
+                                  <option  *ngFor='let l of locations'>
+
+                                    {{ l.nombre}}
+
+                                </option>
 
                                 </select>
                         </div>
 
 
 
-                        
+
 
                             <button class="btn btn-success btn-block">
                                 Guardar cliente
                             </button>
-              
-              
-              
-              
-              
-              
-              
+
+
+
+
+
+
+
                       </div>
                     </div>
                   </div>

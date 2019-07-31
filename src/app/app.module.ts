@@ -6,17 +6,23 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './components/navigation/sidebar/sidebar.component';
 import { ClientFormComponent } from './components/clients/client-form/client-form.component';
 
+import {SexService} from './service/sex.service';
+import {HttpClientModule} from '@angular/common/http';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
-    ClientFormComponent
+    ClientFormComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [SexService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
