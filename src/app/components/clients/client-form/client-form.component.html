@@ -1,127 +1,187 @@
-
 <div class="container">
-        <div class="row p-5">
-                <div class="col-md-8 offset-md-4">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="form-group">
-                        <div class="card-header mb-2">
-                          <h1 class="text-center text-white text-muted text-capitalize"> Nuevo cliente</h1>
-                        </div>
-                        <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text">Nombre y apellido</span>
-                                </div>
-                                <input type="text" aria-label="First name" class="form-control">
-                                <input type="text" aria-label="Last name" class="form-control">
-                        </div>
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputDniClient">Dni</label>
-                          </div>
-                          <input type="number" id="inputDniClient" class="form-control">
+  <div class="row p-5">
+    <div class="col-md-8 offset-md-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="form-group">
+            <div class="card-header mb-2">
+              <h1 class="text-center text-white text-muted text-capitalize"> Nuevo cliente</h1>
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Nombre y apellido</span>
+              </div>
+              <input type="text" class="form-control" required minlength="4" pattern="[a-z]*[A-Z]*" [(ngModel)]="cliente.name_client" name="nameCliente"
+                #nameCliente="ngModel">
 
-                        </div>
-                        <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                  <label class="input-group-text" for="inputCuitClient">CUIT</label>
-                                </div>
-                                <input type="number" id="inputCuitClient" class="form-control">
+              <input name="surnameCliente" type="text" class="form-control" required minlength="4" pattern="[a-z]*[A-Z]*" [(ngModel)]="cliente.client_apellido" #surnameCliente="ngModel">
+            </div>
 
-                              </div>
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputDateClient">Fecha Nacimiento</label>
-                          </div>
-                          <input type="date" id="inputDateClient" class="form-control">
-                        </div>
-                        <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                  <label class="input-group-text" for="inputSexClient">Sexo</label>
-                                </div>
-                                <select class="custom-select" id="inputSexClient">
-                                  <option  *ngFor='let s of sexs'>
+            <div *ngIf="nameCliente.invalid && (nameCliente.dirty || nameCliente.touched)" class="alert alert-danger">
 
-                                    {{ s.type_sex}}
+              <div *ngIf="nameCliente.errors.required">
+                El Nombre es Requerido.
+              </div>
+              <div *ngIf="nameCliente.errors.minlength">
+                Nombre debe tener mas de 4 caracteres.
+              </div>
 
-                                </option>
+              <div *ngIf="nameCliente.errors.pattern">
+                El nombre no es valido.
+              </div>
 
-                                </select>
-                        </div>
-                        <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                  <label class="input-group-text" for="inputTypePersonClient">Tipo de persona</label>
-                                </div>
-                                <select class="custom-select" id="inputTypePersonClient">
-                                  <option  *ngFor='let t of typepeople'>
+            </div>
 
-                                    {{ t.name_type_persons}}
 
-                                </option>
+            <div *ngIf="surnameCliente.invalid && (surnameCliente.dirty || surnameCliente.touched)" class="alert alert-danger">
 
-                                </select>
-                        </div>
-                        <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                  <label class="input-group-text" for="inputTypeConsumerClient">Tipo de consumidor</label>
-                                </div>
-                                <select class="custom-select" id="inputTypeConsumerClient">
-                                  <option  *ngFor='let t of typeconsumers'>
+              <div *ngIf="surnameCliente.errors.required">
+                El Apellido es Requerido.
+              </div>
+              <div *ngIf="surnameCliente.errors.minlength">
+                El Apellido debe tener mas de 4 caracteres.
+              </div>
+              <div *ngIf="surnameCliente.errors.pattern">
+                El apellido no es valido.
+              </div>
 
-                                    {{ t.name_type_consumer}}
 
-                                </option>
-
-                                </select>
-                        </div>
+            </div>
 
 
 
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputEmailClient">Email</label>
-                          </div>
-                          <input type="email" id="inputEmailClient" class="form-control">
-                        </div>
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputPhoneClient">Telefono(fijo)</label>
-                          </div>
-                          <input type="number" id="inputPhoneClient" class="form-control">
-                        </div>
-                        <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                  <label class="input-group-text" for="inputMobileClient">Celular</label>
-                                </div>
-                                <input type="number" id="inputMobileClient" class="form-control">
-                        </div>
-                        <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                  <label class="input-group-text" for="inputAdressClient">Direccion</label>
-                                </div>
-                                <input type="text" id="inputAdressClient" class="form-control">
-                        </div>
-                        <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                  <label class="input-group-text" for="inputLocationClient">Localidad</label>
-                                </div>
-                                <select class="custom-select" id="inputLocationClient">
-                                  <option  *ngFor='let l of locations'>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputDniClient">Dni</label>
+              </div>
+              <input pattern="[0-9]*" minlength="8" maxlength="8" name="dniCliente" id="inputDniClient" [(ngModel)]="cliente.client_dni" class="form-control" required    #dniCliente="ngModel"
+              (change)="verifica()"
+              >
+            </div>
 
-                                    {{ l.nombre}}
+            <div *ngIf="dniCliente.invalid && (dniCliente.dirty || dniCliente.touched)" class="alert alert-danger">
 
-                                </option>
+              <div *ngIf="dniCliente.errors.required" >
+                El dni es Requerido.
+              </div>
+              <div *ngIf="dniCliente.errors.minlength">
+                El dni debe tener mas de 7 caracteres.
+              </div>
+              <div *ngIf="dniCliente.errors.maxlength">
+                El dni debe tener mas de 8 caracteres.
+              </div>
+              <div *ngIf="dniCliente.errors.pattern">
+                El dni debe ser un numero.
+              </div>
 
-                                </select>
-                        </div>
+              
+              
+            </div>
 
 
 
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputCuitClient">CUIT</label>
+              </div>
+              <input type="number" id="inputCuitClient" class="form-control">
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputDateClient">Fecha Nacimiento</label>
+              </div>
+              <input type="date" id="inputDateClient" class="form-control" [(ngModel)]="cliente.fecha">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputSexClient">Sexo</label>
+              </div>
+              <select class="custom-select" id="inputSexClient" [(ngModel)]="cliente.sex_id">
+                <option *ngFor='let s of sexs' value={{s.id_sex}}>
+
+                  {{ s.type_sex}}
 
 
-                            <button class="btn btn-success btn-block">
-                                Guardar cliente
-                            </button>
+
+                </option>
+
+              </select>
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputTypePersonClient">Tipo de persona</label>
+              </div>
+              <select class="custom-select" id="inputTypePersonClient" [(ngModel)]="cliente.type_people_id">
+                <option *ngFor='let t of typepeople' value={{t.id_person}}>
+
+                  {{ t.name_type_persons}}
+
+                </option>
+
+              </select>
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputTypeConsumerClient">Tipo de consumidor</label>
+              </div>
+              <select class="custom-select" id="inputTypeConsumerClient" [(ngModel)]="cliente.type_consumer_id">
+                <option value="" *ngFor='let t of typeconsumers' value={{t.id}}>
+                 
+                  {{ t.name_type_consumer}}
+
+                </option>
+
+              </select>
+            </div>
+
+
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputEmailClient">Email</label>
+              </div>
+              <input type="email" id="inputEmailClient" class="form-control" [(ngModel)]="cliente.client_email">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputPhoneClient">Telefono(fijo)</label>
+              </div>
+              <input type="number" id="inputPhoneClient" class="form-control" [(ngModel)]="cliente.client_fijo">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputMobileClient">Celular</label>
+              </div>
+              <input type="number" id="inputMobileClient" class="form-control" [(ngModel)]="cliente.client_celular">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputAdressClient">Direccion</label>
+              </div>
+              <input type="text" id="inputAdressClient" class="form-control" [(ngModel)]="cliente.client_direccion">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputLocationClient">Localidad</label>
+              </div>
+              <select class="custom-select" id="inputLocationClient"[(ngModel)]="cliente.department_id">
+                <option *ngFor='let l of locations' value={{l.id_department}}>
+
+                  {{ l.nombre}}
+
+                </option>
+
+              </select>
+            </div>
+
+
+
+
+
+            <button (click)="addclient(form-group)" class="btn btn-success btn-block" >
+              Guardar cliente
+            </button>
 
 
 
@@ -129,9 +189,9 @@
 
 
 
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
 </div>

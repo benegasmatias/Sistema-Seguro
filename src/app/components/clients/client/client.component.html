@@ -1,0 +1,39 @@
+<div class="row offset-2">
+
+
+<div class="card mb-5">
+        
+    <div class=" card-header d-flex justify-content-between aling-item-center text-capitalize text-left font-weight-bold">
+            {{client.client_apellido}} - {{client.name_client}}    
+            <div class="container col-sm">
+                    <button class="btn btn-success btn-sm rounded-pill" (click)="client.hide = !client.hide">
+                            Show
+                    </button>
+                    <button class="btn btn-danger btn-sm rounded-pill" (click)="deleteclient(client.id_client)">
+                            Delete
+                    </button>
+            </div>
+    </div>
+
+    <div class="card-body" [hidden]="!client.hide"> <!--[hidden] ocultalo si el atributo hide es igual a true-->
+            
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Dni: {{client.id_client}}</li>
+                <li class="list-group-item">Dni: {{client.client_dni}}</li>
+                <li class="list-group-item">Celular: {{client_celular}}</li>
+                <li class="list-group-item">Tel/Fijo: {{client_fijo}}</li>
+                <li class="list-group-item">Email: {{client.client_email}}</li>
+                <li class="list-group-item">Direccion: {{client.client_direccion}}</li>
+                <li class="list-group-item">Fecha de nacimiento: {{client.fecha}}</li>
+                <li class="list-group-item">Tipo Consumidor: {{client.type_consumer_id}}</li>
+                <li class="list-group-item">Tipo Persona: {{client.type_people_id}}</li>
+                <li class="list-group-item">Localidad: {{client.department_id}}</li>
+                <li class="list-group-item">Sexo: {{client.sex_id}}</li>
+              </ul>
+
+              
+
+ 
+    </div>
+  </div>
+</div>
